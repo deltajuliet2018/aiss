@@ -1,32 +1,27 @@
-##### This should run in Linux and Windows.
-##### Using the "command prompt" or "bash" 
-
-##### Usage : 
-#####              python  webstat.py
-#####
-##### for python 3,
-#####              python3  webstat.py
-#####
-#############################################
-#####  GNU License version 2  is always implied in using this
-#####  script.
-##### The author expects you to know that LICENSE and DISCLAIMER.
-#############################################
-
-
-
-
-#####modules required in accessing web servers using http
-#####and or https as well as for system console.
+import sys, time, threading
 import os
 import platform
 import requests as req
 
-#####best to display a clean output depending
-#####on what type of OS this script is running.
-#####Linux and Windows only. Apologies to
-#####Mac users.   :-)
 
+# Our spinner function, not necessarily
+# required but for classiness-sake only
+def spin_cursor():
+    while True:
+        for cursor in '|/-\\':
+            sys.stdout.write(cursor)
+            sys.stdout.flush()
+            time.sleep(0.1)
+            sys.stdout.write('\b')
+            if done:
+                return
+
+# start the spinner in a separate thread
+done = False
+spin_thread = threading.Thread(target=spin_cursor)
+
+
+# do some more work in the main thread
 ourOS = platform.system()
 
 if ourOS == "Linux":
@@ -43,7 +38,7 @@ print(" \n")
 #####querying of GSMS web server starts here
 print("-------------------- GSMS ------------------------\n")
 
-
+spin_thread.start()
 ####Use catch definition in python to trap any unexpected errors.
 ####Prevents display of full stack trace back using the generic 
 ####standard Exception class. Python 2 and Python 3 have
@@ -52,6 +47,8 @@ print("-------------------- GSMS ------------------------\n")
 try:
 	resp = req.get("http://180.232.111.41")
 	resp2 = req.get("http://122.53.177.137")
+	done = True
+	spin_thread.join()
 	if resp.status_code == 200:
 		print ("GSMS log-in page using ISP1 is operational.")
 	else:
@@ -63,6 +60,8 @@ try:
 		print ("GSMS Web server or ISP2 is down.")
 	
 except Exception:
+	done = True
+	spin_thread.join()
 	print("Unable to access GSMS assigned IPs.")
 	
 print("--------------------------------------------------\n")	
@@ -71,10 +70,14 @@ print("--------------------------------------------------\n")
 
 #####querying of AISS web server starts here
 print("-------------------- AISS ------------------------\n")
-
+done = False
+spin_thread = threading.Thread(target=spin_cursor)
+spin_thread.start()
 try:
 	resp = req.get("http://180.232.111.40")
 	resp2 = req.get("http://122.53.177.136")
+	done = True
+	spin_thread.join()
 	if resp.status_code == 200:
 		print ("AISS  using ISP1 is operational.")
 	else:
@@ -86,16 +89,24 @@ try:
 		print ("ISP2 is down.")
 
 except Exception:
+	done = True
+	spin_thread.join()
 	print("Unable to access AISS assigned IPs.")
 
 print(" \n")
 
 
+done = False
+spin_thread = threading.Thread(target=spin_cursor)
+spin_thread.start()
 try:
 	####The IBS is using redirect from static DNS suppllied by 
 	####CAAP. So, we should query it separately from IPs supplied
 	####by our two ISPs
 	resp = req.get("https://aiss.caap.gov.ph/fwf-caap/")
+	done = True
+	spin_thread.join()
+	
 
 
 	if resp.status_code == 200:
@@ -106,6 +117,11 @@ try:
 	print("--------------------------------------------------\n")	
 
 except Exception:
-	print("Error occurred while re-directing to  AISS web server.")
+	done = True
+	spin_thread.join()
+	print("Error while re-directing to  AISS web server.")
 	print("This could be an illegal entry in DNS list.\n")
-	
+
+
+
+print("all done.\n")
