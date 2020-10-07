@@ -22,6 +22,11 @@ spin_thread = threading.Thread(target=spin_cursor)
 
 
 # do some more work in the main thread
+#####best to display a clean output depending
+#####on what type of OS this script is running.
+#####Linux and Windows only. Apologies to
+#####Mac users.   :-)
+
 ourOS = platform.system()
 
 if ourOS == "Linux":
