@@ -1,7 +1,7 @@
 #! /bin/bash
 #################
 ##Created for AISS####
-##08 Jan 2020#######
+##08 Feb 2020#######
 
 
 clear
@@ -17,9 +17,25 @@ then
 	exit 1
 fi
 
-cd /opt/EAD/SDO/current/config/
-sed s/WARN/DEBUG/g  sdo_app_log4j.properties  > anewtemp
-cp -f anewtemp sdo_app_log4j.properties
+
+if  [  "$1" == "revert"  ] 
+
+then
+	cd /opt/EAD/SDO/current/config/
+	sed s/DEBUG/WARN/g  sdo_app_log4j.properties  > anewtemp
+	cp -f anewtemp sdo_app_log4j.properties
+	rm -f anewtemp
+	
+else
+	cd /opt/EAD/SDO/current/config/
+	sed s/WARN/DEBUG/g  sdo_app_log4j.properties  > anewtemp
+	cp -f anewtemp sdo_app_log4j.properties
+	rm -f anewtemp
+	
+
+fi
+
+
 
 
 
