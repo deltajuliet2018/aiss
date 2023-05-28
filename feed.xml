@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-28T21:39:17+08:00</updated><id>/feed.xml</id><title type="html">Manila ATMC</title><subtitle>Built for fun &amp; learning.</subtitle><author><name>Davey Jamera</name></author><entry><title type="html">My Birthday At Atmc</title><link href="/2023/05/20/My-Birthday-at-ATMC.html" rel="alternate" type="text/html" title="My Birthday At Atmc" /><published>2023-05-20T00:00:00+08:00</published><updated>2023-05-20T00:00:00+08:00</updated><id>/2023/05/20/My-Birthday-at-ATMC</id><content type="html" xml:base="/2023/05/20/My-Birthday-at-ATMC.html"><![CDATA[<p>Hohoho…My birthday post should appear here.</p>
-
-<p>To add new posts, simply add a file in the <code class="language-plaintext highlighter-rouge">_posts</code> directory that follows the convention <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
-
-<p>Jekyll also offers powerful support for code snippets:</p>
-
-<p>Check out the <a href="https://www.google.com.ph">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests,</p>]]></content><author><name>Davey Jamera</name></author><summary type="html"><![CDATA[Hohoho…My birthday post should appear here.]]></summary></entry><entry><title type="html">Why Shift From Python</title><link href="/2021/01/01/Why-shift-from-python.html" rel="alternate" type="text/html" title="Why Shift From Python" /><published>2021-01-01T00:00:00+08:00</published><updated>2021-01-01T00:00:00+08:00</updated><id>/2021/01/01/Why-shift-from-python</id><content type="html" xml:base="/2021/01/01/Why-shift-from-python.html"><![CDATA[<p>This site’s contents was originally generated with the help of  <a href="https://www.python.org/">Python Language</a>.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-28T21:46:40+08:00</updated><id>/feed.xml</id><title type="html">Manila ATMC</title><subtitle>Built for fun &amp; learning.</subtitle><author><name>Davey Jamera</name></author><entry><title type="html">Why Shift From Python</title><link href="/2021/01/01/Why-shift-from-python.html" rel="alternate" type="text/html" title="Why Shift From Python" /><published>2021-01-01T00:00:00+08:00</published><updated>2021-01-01T00:00:00+08:00</updated><id>/2021/01/01/Why-shift-from-python</id><content type="html" xml:base="/2021/01/01/Why-shift-from-python.html"><![CDATA[<p>This site’s contents was originally generated with the help of  <a href="https://www.python.org/">Python Language</a>.
 For years, a lot of python modules are created by coders that ease the creation of site pages including mine. I thanked all of them. The previous website looks is said to have  served its purpose. Simple and minimal.</p>
 
 <p>But things do change in time. An influencer told me that I have to combine <code class="language-plaintext highlighter-rouge">simplicity</code> with <code class="language-plaintext highlighter-rouge">convenience</code> and <code class="language-plaintext highlighter-rouge">beauty</code>.</p>
@@ -157,24 +151,4 @@ For years, a lot of python modules are created by coders that ease the creation 
 
 <p>or</p>
 
-<p><code class="language-plaintext highlighter-rouge">$ python2 webstat.py</code></p>]]></content><author><name>Davey Jamera</name></author><summary type="html"><![CDATA[A quick hack for checking AISS and GSMS using python language. This can be used both in Windows or GNULinux as long as python is installed.]]></summary></entry><entry><title type="html">Task Item Post</title><link href="/2016/01/11/task-item-list.html" rel="alternate" type="text/html" title="Task Item Post" /><published>2016-01-11T00:00:00+08:00</published><updated>2016-01-11T00:00:00+08:00</updated><id>/2016/01/11/task-item-list</id><content type="html" xml:base="/2016/01/11/task-item-list.html"><![CDATA[<p>This post tests the style of a task item list.</p>
-
-<p>Source:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> [x] Eating
-<span class="p">-</span> [ ] Walking
-<span class="p">  -</span> [ ] Running
-<span class="p">-</span> [ ] Sleeping
-</code></pre></div></div>
-
-<p>Rendered:</p>
-
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Eating</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Walking
-    <ul class="task-list">
-      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Running</li>
-    </ul>
-  </li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Sleeping</li>
-</ul>]]></content><author><name>Davey Jamera</name></author><category term="to-do list" /><summary type="html"><![CDATA[This post tests the style of a task item list.]]></summary></entry></feed>
+<p><code class="language-plaintext highlighter-rouge">$ python2 webstat.py</code></p>]]></content><author><name>Davey Jamera</name></author><summary type="html"><![CDATA[A quick hack for checking AISS and GSMS using python language. This can be used both in Windows or GNULinux as long as python is installed.]]></summary></entry></feed>
