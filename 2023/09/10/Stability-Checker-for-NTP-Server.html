@@ -7,20 +7,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Why Shift From Python | Manila ATMC</title>
+<title>Stability Checker script for any NTP server | Manila ATMC</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="Why Shift From Python" />
+<meta property="og:title" content="Stability Checker script for any NTP server" />
 <meta name="author" content="Davey Jamera" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="This site’s contents was originally generated with the help of Python Language. For years, a lot of python modules are created by coders that ease the creation of site pages including mine. I thanked all of them. The previous website looks is said to have served its purpose. Simple and minimal." />
-<meta property="og:description" content="This site’s contents was originally generated with the help of Python Language. For years, a lot of python modules are created by coders that ease the creation of site pages including mine. I thanked all of them. The previous website looks is said to have served its purpose. Simple and minimal." />
+<meta name="description" content="A quick and dirty method for testing any NTP servers. In this case, the newly installed server at ATMC. This script was written using BASH scripting syntax." />
+<meta property="og:description" content="A quick and dirty method for testing any NTP servers. In this case, the newly installed server at ATMC. This script was written using BASH scripting syntax." />
 <meta property="og:site_name" content="Manila ATMC" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-01-01T00:00:00+08:00" />
+<meta property="article:published_time" content="2023-09-10T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Why Shift From Python" />
+<meta property="twitter:title" content="Stability Checker script for any NTP server" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Davey Jamera"},"dateModified":"2021-01-01T00:00:00+08:00","datePublished":"2021-01-01T00:00:00+08:00","description":"This site’s contents was originally generated with the help of Python Language. For years, a lot of python modules are created by coders that ease the creation of site pages including mine. I thanked all of them. The previous website looks is said to have served its purpose. Simple and minimal.","headline":"Why Shift From Python","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/01/01/Why-shift-from-python.html"},"url":"/2021/01/01/Why-shift-from-python.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Davey Jamera"},"dateModified":"2023-09-10T00:00:00+08:00","datePublished":"2023-09-10T00:00:00+08:00","description":"A quick and dirty method for testing any NTP servers. In this case, the newly installed server at ATMC. This script was written using BASH scripting syntax.","headline":"Stability Checker script for any NTP server","mainEntityOfPage":{"@type":"WebPage","@id":"/2023/09/10/Stability-Checker-for-NTP-Server.html"},"url":"/2023/09/10/Stability-Checker-for-NTP-Server.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -156,24 +156,75 @@
 
   <header class="post-header">
 
-    <h1 class="post-title p-name" itemprop="name headline">Why Shift From Python</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2021-01-01T00:00:00+08:00" itemprop="datePublished">
-        Jan 1, 2021
+    <h1 class="post-title p-name" itemprop="name headline">Stability Checker script  for any NTP server</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2023-09-10T00:00:00+08:00" itemprop="datePublished">
+        Sep 10, 2023
       </time></p>
 
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>This site’s contents was originally generated with the help of  <a href="https://www.python.org/">Python Language</a>.
-For years, a lot of python modules are created by coders that ease the creation of site pages including mine. I thanked all of them. The previous website looks is said to have  served its purpose. Simple and minimal.</p>
+    <p>A quick and dirty method for testing any NTP servers. In this case, the newly installed
+server at ATMC. This script was written using BASH scripting syntax.</p>
 
-<p>But things do change in time. An influencer told me that I have to combine <code class="language-plaintext highlighter-rouge">simplicity</code> with <code class="language-plaintext highlighter-rouge">convenience</code> and <code class="language-plaintext highlighter-rouge">beauty</code>.</p>
+<p>This is the complete code.</p>
 
-<p>Sure, Python can do this too. I however don’t have the luxury of time to scour the thousands of modules available. And I need to do it fast.</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#! /bin/bash</span>
+<span class="c1">### To be used for mntdntp02tm or any NTP server</span>
+<span class="c1">### requiring stability test. This done</span>
+<span class="c1">### by querying the server every ten (10) mins</span>
+<span class="c1">### for twenty four (24) hours. The LOG file</span>
+<span class="c1">### can be check if there is any discrepancies.</span>
+<span class="c1">###     ---- NTP Team</span>
+<span class="c1">###</span>
+<span class="c1">### Usage:   ./stabilitycheck [10.52.166.101]</span>
+<span class="c1">### IP must be supplied as argument</span>
 
-<p>Here come the <a href="https://rubygems.org/">Gems</a>.  These are modules created by  <a href="https://www.ruby-lang.org/en">Ruby Language</a> to perform specific tasks. And I immediately found one or two that can work seamlessly with my free website storage provider. The <a href="https://github.com/">Github</a>.</p>
 
-<p>Finally, I am now mostly working on <code class="language-plaintext highlighter-rouge">Gems</code> setting aside <code class="language-plaintext highlighter-rouge">Python eggs</code> for the time being.</p>
+<span class="k">if</span> <span class="p">[</span> <span class="s2">"$#"</span> <span class="o">-</span><span class="n">ne</span> <span class="mi">1</span> <span class="p">]</span> <span class="p">;</span> <span class="k">then</span>
+
+ <span class="n">clear</span>
+ <span class="n">echo</span> <span class="s2">"One IP argument is necessary."</span>
+ <span class="n">echo</span> <span class="s2">"e.g. $ ./stabilitycheck 10.52.166.101"</span>
+ <span class="nb">exit</span>
+<span class="n">fi</span>
+
+<span class="c1">### IP of server to be checked</span>
+
+<span class="no">SERVERIP</span><span class="o">=</span><span class="s2">"$1"</span>
+<span class="n">ping</span> <span class="o">-</span><span class="n">c</span> <span class="mi">2</span> <span class="s2">"$1"</span> <span class="o">&gt;</span> <span class="sr">/dev/nu</span><span class="n">ll</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>
+<span class="k">if</span> <span class="p">[</span> <span class="s2">"$?"</span> <span class="o">-</span><span class="n">ne</span> <span class="mi">0</span> <span class="p">];</span> <span class="k">then</span>
+<span class="n">clear</span>
+<span class="n">echo</span> <span class="s2">" "</span>
+<span class="n">echo</span> <span class="s2">"IP supplied is not reachable."</span>
+<span class="nb">exit</span>
+<span class="n">fi</span>
+
+<span class="n">clear</span>
+<span class="n">cnt</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">while</span> <span class="p">[</span> <span class="vg">$cnt</span> <span class="o">-</span><span class="n">lt</span> <span class="mi">144</span> <span class="p">]</span>
+<span class="k">do</span>
+
+  <span class="n">let</span> <span class="n">cnt</span><span class="o">=</span><span class="n">cnt</span><span class="o">+</span><span class="mi">1</span>
+  <span class="n">echo</span> <span class="s2">"--- round $cnt test on $SERVERIP ---&gt;"</span>
+  <span class="n">ntpdate</span> <span class="o">-</span><span class="n">q</span> <span class="vg">$SERVERIP</span> <span class="o">|</span> <span class="n">tee</span> <span class="o">-</span><span class="n">a</span> <span class="n">stabilityLOG</span>
+  <span class="n">echo</span> <span class="s2">" "</span>
+  
+  <span class="nb">sleep</span> <span class="mi">10</span><span class="n">m</span>
+<span class="n">done</span>
+
+<span class="n">echo</span> <span class="s2">" "</span>
+<span class="n">echo</span> <span class="s2">"--------------------------------------------"</span>
+<span class="n">echo</span> <span class="s2">"Performed $cnt rounds of test to $SERVERIP"</span>
+<span class="n">echo</span> <span class="s2">"NTP server. Log report was written in stabilityLOG"</span>
+<span class="n">echo</span> <span class="s2">"file. Bye"</span>
+<span class="n">echo</span> <span class="s2">" "</span>
+<span class="n">echo</span> <span class="s2">"  ---- NTP Team"</span>
+<span class="n">echo</span> <span class="s2">" "</span></code></pre></figure>
+
+<p>This can be executed in a command line,</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ stabilitycheck 10.52.166.101</code></p>
 
 
   </div>
@@ -185,20 +236,20 @@ For years, a lot of python modules are created by coders that ease the creation 
 
     <nav class="post-pagination" role="navigation">
       
-        <a class="post-previous" href="../../../2020/02/20/Web-Checker-For-AISS-And-GSMS.html">
+        <a class="post-previous" href="../../01/11/task-item-list.html">
           <h4 class="post-pagination-label">Prev</h4>
           <span class="post-pagination-title">
-            <i class="fas fa-arrow-left"></i> Web Checker for AISS and GSMS
+            <i class="fas fa-arrow-left"></i> APK Tools and other SSH clients
 
           </span>
         </a>
       
 
       
-        <a class="post-next" href="../../../2023/01/11/task-item-list.html">
+        <a class="post-next" href="../30/Hand-Outs.html">
           <h4 class="post-pagination-label">Next</h4>
           <span class="post-pagination-title">
-            APK Tools and other SSH clients
+            Hand outs will appear here
  <i class="fas fa-arrow-right"></i>
           </span>
         </a>

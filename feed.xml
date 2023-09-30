@@ -1,4 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-29T20:33:33+08:00</updated><id>/feed.xml</id><title type="html">Manila ATMC</title><subtitle>Built for fun &amp; learning.</subtitle><author><name>Davey Jamera</name></author><entry><title type="html">Why Shift From Python</title><link href="/2021/01/01/Why-shift-from-python.html" rel="alternate" type="text/html" title="Why Shift From Python" /><published>2021-01-01T00:00:00+08:00</published><updated>2021-01-01T00:00:00+08:00</updated><id>/2021/01/01/Why-shift-from-python</id><content type="html" xml:base="/2021/01/01/Why-shift-from-python.html"><![CDATA[<p>This site’s contents was originally generated with the help of  <a href="https://www.python.org/">Python Language</a>.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-09-30T20:42:38+08:00</updated><id>/feed.xml</id><title type="html">Manila ATMC</title><subtitle>Built for fun &amp; learning.</subtitle><author><name>Davey Jamera</name></author><entry><title type="html">Hand outs will appear here</title><link href="/2023/09/30/Hand-Outs.html" rel="alternate" type="text/html" title="Hand outs will appear here" /><published>2023-09-30T00:00:00+08:00</published><updated>2023-09-30T00:00:00+08:00</updated><id>/2023/09/30/Hand-Outs</id><content type="html" xml:base="/2023/09/30/Hand-Outs.html"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Available PDF</code></p>
+
+<p>lorem ipsum lorem ipsum
+lorem ipsum lorem ipsum
+lorem ipsum lorem ipsum</p>
+
+<p><code class="language-plaintext highlighter-rouge">Available screencast</code></p>
+
+<p>lorem ipsum lorem ipsum
+lorem ipsum lorem ipsum
+lorem ipsum lorem ipsum</p>]]></content><author><name>Davey Jamera</name></author><category term="BCNSSO43" /><summary type="html"><![CDATA[Available PDF]]></summary></entry><entry><title type="html">Stability Checker script for any NTP server</title><link href="/2023/09/10/Stability-Checker-for-NTP-Server.html" rel="alternate" type="text/html" title="Stability Checker script for any NTP server" /><published>2023-09-10T00:00:00+08:00</published><updated>2023-09-10T00:00:00+08:00</updated><id>/2023/09/10/Stability-Checker-for-NTP-Server-</id><content type="html" xml:base="/2023/09/10/Stability-Checker-for-NTP-Server.html"><![CDATA[<p>A quick and dirty method for testing any NTP servers. In this case, the newly installed
+server at ATMC. This script was written using BASH scripting syntax.</p>
+
+<p>This is the complete code.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#! /bin/bash</span>
+<span class="c1">### To be used for mntdntp02tm or any NTP server</span>
+<span class="c1">### requiring stability test. This done</span>
+<span class="c1">### by querying the server every ten (10) mins</span>
+<span class="c1">### for twenty four (24) hours. The LOG file</span>
+<span class="c1">### can be check if there is any discrepancies.</span>
+<span class="c1">###     ---- NTP Team</span>
+<span class="c1">###</span>
+<span class="c1">### Usage:   ./stabilitycheck [10.52.166.101]</span>
+<span class="c1">### IP must be supplied as argument</span>
+
+
+<span class="k">if</span> <span class="p">[</span> <span class="s2">"$#"</span> <span class="o">-</span><span class="n">ne</span> <span class="mi">1</span> <span class="p">]</span> <span class="p">;</span> <span class="k">then</span>
+
+ <span class="n">clear</span>
+ <span class="n">echo</span> <span class="s2">"One IP argument is necessary."</span>
+ <span class="n">echo</span> <span class="s2">"e.g. $ ./stabilitycheck 10.52.166.101"</span>
+ <span class="nb">exit</span>
+<span class="n">fi</span>
+
+<span class="c1">### IP of server to be checked</span>
+
+<span class="no">SERVERIP</span><span class="o">=</span><span class="s2">"$1"</span>
+<span class="n">ping</span> <span class="o">-</span><span class="n">c</span> <span class="mi">2</span> <span class="s2">"$1"</span> <span class="o">&gt;</span> <span class="sr">/dev/nu</span><span class="n">ll</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>
+<span class="k">if</span> <span class="p">[</span> <span class="s2">"$?"</span> <span class="o">-</span><span class="n">ne</span> <span class="mi">0</span> <span class="p">];</span> <span class="k">then</span>
+<span class="n">clear</span>
+<span class="n">echo</span> <span class="s2">" "</span>
+<span class="n">echo</span> <span class="s2">"IP supplied is not reachable."</span>
+<span class="nb">exit</span>
+<span class="n">fi</span>
+
+<span class="n">clear</span>
+<span class="n">cnt</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">while</span> <span class="p">[</span> <span class="vg">$cnt</span> <span class="o">-</span><span class="n">lt</span> <span class="mi">144</span> <span class="p">]</span>
+<span class="k">do</span>
+
+  <span class="n">let</span> <span class="n">cnt</span><span class="o">=</span><span class="n">cnt</span><span class="o">+</span><span class="mi">1</span>
+  <span class="n">echo</span> <span class="s2">"--- round $cnt test on $SERVERIP ---&gt;"</span>
+  <span class="n">ntpdate</span> <span class="o">-</span><span class="n">q</span> <span class="vg">$SERVERIP</span> <span class="o">|</span> <span class="n">tee</span> <span class="o">-</span><span class="n">a</span> <span class="n">stabilityLOG</span>
+  <span class="n">echo</span> <span class="s2">" "</span>
+  
+  <span class="nb">sleep</span> <span class="mi">10</span><span class="n">m</span>
+<span class="n">done</span>
+
+<span class="n">echo</span> <span class="s2">" "</span>
+<span class="n">echo</span> <span class="s2">"--------------------------------------------"</span>
+<span class="n">echo</span> <span class="s2">"Performed $cnt rounds of test to $SERVERIP"</span>
+<span class="n">echo</span> <span class="s2">"NTP server. Log report was written in stabilityLOG"</span>
+<span class="n">echo</span> <span class="s2">"file. Bye"</span>
+<span class="n">echo</span> <span class="s2">" "</span>
+<span class="n">echo</span> <span class="s2">"  ---- NTP Team"</span>
+<span class="n">echo</span> <span class="s2">" "</span></code></pre></figure>
+
+<p>This can be executed in a command line,</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ stabilitycheck 10.52.166.101</code></p>]]></content><author><name>Davey Jamera</name></author><summary type="html"><![CDATA[A quick and dirty method for testing any NTP servers. In this case, the newly installed server at ATMC. This script was written using BASH scripting syntax.]]></summary></entry><entry><title type="html">APK Tools and other SSH clients</title><link href="/2023/01/11/task-item-list.html" rel="alternate" type="text/html" title="APK Tools and other SSH clients" /><published>2023-01-11T00:00:00+08:00</published><updated>2023-01-11T00:00:00+08:00</updated><id>/2023/01/11/task-item-list</id><content type="html" xml:base="/2023/01/11/task-item-list.html"><![CDATA[<p>Available for Android, iPhone, and desktop.</p>
+
+<p><a href="https://play.google.com/store/apps/details?id=com.sonelli.juicessh&amp;hl=en">JuiceSSH for Android</a></p>
+
+<p><a href="https://apps.apple.com/us/app/termius/id549039908">Termiux for iPhone</a></p>
+
+<p><a href="https://winscp.net/eng/docs/free_ssh_client_for_windows">WinSCP for windows</a></p>
+
+<p><a href="https://downloads.digitaltrends.com/putty/windows">puTTY for windows</a></p>]]></content><author><name>Davey Jamera</name></author><category term="BCNSSO43" /><summary type="html"><![CDATA[Available for Android, iPhone, and desktop.]]></summary></entry><entry><title type="html">Why Shift From Python</title><link href="/2021/01/01/Why-shift-from-python.html" rel="alternate" type="text/html" title="Why Shift From Python" /><published>2021-01-01T00:00:00+08:00</published><updated>2021-01-01T00:00:00+08:00</updated><id>/2021/01/01/Why-shift-from-python</id><content type="html" xml:base="/2021/01/01/Why-shift-from-python.html"><![CDATA[<p>This site’s contents was originally generated with the help of  <a href="https://www.python.org/">Python Language</a>.
 For years, a lot of python modules are created by coders that ease the creation of site pages including mine. I thanked all of them. The previous website looks is said to have  served its purpose. Simple and minimal.</p>
 
 <p>But things do change in time. An influencer told me that I have to combine <code class="language-plaintext highlighter-rouge">simplicity</code> with <code class="language-plaintext highlighter-rouge">convenience</code> and <code class="language-plaintext highlighter-rouge">beauty</code>.</p>
