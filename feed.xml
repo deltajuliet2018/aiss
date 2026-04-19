@@ -1,16 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-06T08:52:18+08:00</updated><id>/feed.xml</id><title type="html">Manila ATMC</title><subtitle>Built for fun &amp; learning.</subtitle><author><name>Davey Jamera</name></author><entry><title type="html">Hand outs will appear here</title><link href="/2023/09/30/Hand-Outs.html" rel="alternate" type="text/html" title="Hand outs will appear here" /><published>2023-09-30T00:00:00+08:00</published><updated>2023-09-30T00:00:00+08:00</updated><id>/2023/09/30/Hand-Outs</id><content type="html" xml:base="/2023/09/30/Hand-Outs.html"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Available PDF</code></p>
-
-<p><a href="archiveEXC06.txt">archiveEXC06.txt</a></p>
-
-<p><a href="Comp5C_Part1.png">Progress/Mastery Score</a></p>
-
-<p><a href="Comp5C_Part2.png">Progress/Mastery Score</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-04-19T08:50:01+08:00</updated><id>/feed.xml</id><title type="html">Manila ATMC</title><subtitle>Built for fun &amp; learning.</subtitle><author><name>Davey Jamera</name></author><entry><title type="html">Your score here</title><link href="/2026/04/19/Exam-Result.html" rel="alternate" type="text/html" title="Your score here" /><published>2026-04-19T00:00:00+08:00</published><updated>2026-04-19T00:00:00+08:00</updated><id>/2026/04/19/Exam-Result</id><content type="html" xml:base="/2026/04/19/Exam-Result.html"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Available PDF</code></p>
 
 <p><code class="language-plaintext highlighter-rouge">Available screencast</code></p>
 
-<p>lorem ipsum lorem ipsum
-lorem ipsum lorem ipsum
-lorem ipsum lorem ipsum</p>]]></content><author><name>Davey Jamera</name></author><category term="BCNSSO44" /><summary type="html"><![CDATA[Available PDF]]></summary></entry><entry><title type="html">Stability Checker script for any NTP server</title><link href="/2023/09/10/Stability-Checker-for-NTP-Server.html" rel="alternate" type="text/html" title="Stability Checker script for any NTP server" /><published>2023-09-10T00:00:00+08:00</published><updated>2023-09-10T00:00:00+08:00</updated><id>/2023/09/10/Stability-Checker-for-NTP-Server-</id><content type="html" xml:base="/2023/09/10/Stability-Checker-for-NTP-Server.html"><![CDATA[<p>A quick and dirty method for testing any NTP servers. In this case, the newly installed
+<p>It seems your instructor is not in a sober
+state. Nobody fails the exam though.
+See you tomorrow.  :-)</p>]]></content><author><name>Davey Jamera</name></author><category term="BCNSSO45" /><summary type="html"><![CDATA[Available PDF]]></summary></entry><entry><title type="html">Stability Checker script for any NTP server</title><link href="/2023/09/10/Stability-Checker-for-NTP-Server.html" rel="alternate" type="text/html" title="Stability Checker script for any NTP server" /><published>2023-09-10T00:00:00+08:00</published><updated>2023-09-10T00:00:00+08:00</updated><id>/2023/09/10/Stability-Checker-for-NTP-Server-</id><content type="html" xml:base="/2023/09/10/Stability-Checker-for-NTP-Server.html"><![CDATA[<p>A quick and dirty method for testing any NTP servers. In this case, the newly installed
 server at ATMC. This script was written using BASH scripting syntax.</p>
 
 <p>This is the complete code.</p>
